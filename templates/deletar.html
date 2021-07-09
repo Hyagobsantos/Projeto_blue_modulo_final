@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pages/nav-style.css">
+    <link rel="stylesheet" href="/static/pages/nav-style.css">
+    
+    <title>Deletar Anime</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    {% if sucesso %}
+    
+        <div style="border: 3px solid black;box-shadow: 5px 5px 5px black;width: 1000px;height: 500px;margin: 20px auto;background-color: rgba(57, 114, 235, 0.6);">
+            <p style="font-size: 36px;text-align: center; font-weight: 600;color: white;" >Registro Removido com Sucesso</p>
+        </div>        
+
+        <div style="width: 500px;margin-left: 1400px;margin-top:-70px ;">
+            <a href="/" class="highlight" style="font-size: 22px;text-align: center;padding: 0px auto;">Visualizar todos os Registros</a>
+        </div>
+
+    {% elif anime %}
+        
+        <div class="bloco2">
+            <h2>Remover Registro</h2>
+        </div>
+
+        <div class="bloco2">
+            <p id="AnimeD">Tem Certeza Que deseja Remover o Anime:  <span class="highlight">{{anime.nome}} ?</span></p>
+        </div>
+
+        <div class="bloco_b">
+            <a href="/deletar/{{anime.id}}/confirmed" class="botao1">Remover</a>
+            <a href="/" class="botao2">Cancelar</a>
+        </div>
+
+    {% else %}
+
+        <div class="bloco2">
+            <h2>Remover Registro</h2>
+        </div>
+
+        <div class="bloco2">
+            <p>Nemhum Filme foi Encontrado</p>
+        </div>
+
+        <div class="bloco2">
+            <a href="/" class="botao">Voltar para a lista de Animes</a>
+        </div>
+
+    {% endif %}
+</body>
+</html>

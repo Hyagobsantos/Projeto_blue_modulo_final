@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/pages/nav-style.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pages/nav-style.css">
+    <title>Criação </title>
+</head>
+<body>
+    
+        {% include 'nav.html' %}
+
+        <div class="bloco2">
+            <h1>Inserir Anime</h1>
+        </div>
+
+        {% if id_anime %}
+
+    <div class="bloco2">
+        <p style="font-size:32px;text-align: center;font-weight: 900;">Anime Inserido Com Sucesso</br>
+            </br>
+            O ID atribuido foi <span class="id_anime">{{ id_anime }}</span>
+            </br>
+            <a href="/listar/{{ id_anime }}" class="view" style="text-align: center;margin-left:-30px;width:50px;">Visualizar Anime</a>
+        </p>
+    </div>
+
+    {% else %}
+
+    <div class="bloco">
+        <form method="post" class="form">
+            <div class="bloco2 ">
+                <label for="nome" style="color: black;">Nome:</label>
+                <input type="text" id="nome"  size="60" maxlength="100" height="20px" style="height: 35px;font-size: 20px;" name="nome" required>
+            </div>
+
+            <div class="bloco2">
+                <label for="imagem_url" style="color: black;padding: 0px 20px;">URL da Imagem:</label>
+                <input type="text" id="imagem_url" size="60" maxlength="100" height="20px" style="height: 35px;font-size: 20px;" name="imagem_url" required>
+            </div>
+
+            <div class="bloco2">
+                <label for="descricao" style="color: black;margin-left: 280px;">Sinopse Parcial</label>
+                <textarea name="descricao" id="descricao" style="margin-left: 115px;font-size: 30px;" cols="45x" rows="4" required></textarea>
+               
+            </div>
+
+            <div class="bloco2">
+                <label for="descricao2" style="color: black;margin-left: 280px;">Sinopse Completa</label>
+                <textarea name="descricao2" id="descricao2" style="margin-left: 115px;font-size: 30px;" cols="45x" rows="4" required></textarea>
+            </div>
+            
+            <div id=botaoC>
+                <input type="submit" class="botao" value="Criar" />
+            </div>
+        </form>
+    </div>
+
+    {% endif %}
+</body>
+</html>

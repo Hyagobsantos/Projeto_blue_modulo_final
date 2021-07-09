@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/pages/nav-style.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/pages/nav_inferior_style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/static/img/favicon.ico" />
+    <title>Projeto final</title>
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <div class="container">
+        
+        {% for anime in animesLista %}
+            <div class="card" style="width: 25%;">
+                <img class="card-img-top" src="{{anime.imagem_url}}" alt="{{anime.nome}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{anime.nome}}</h5>
+                    <p class="card-text">{{anime.descricao}}</p>
+                    <a href="/atualiza/{{anime.id}}" class="btn btn-primary glyphicon glyphicon-plus btn-align"> Editar</a>
+                    <a href="/deletar/{{anime.id}}" class="btn btn-danger glyphicon glyphicon-trash btn-align"> Excluir</a>
+                    <a href="/listar/{{anime.id}}" class="btn btn-success glyphicon glyphicon-zoom-in btn-align" >Details</a>
+                </div>
+            </div>
+        {% endfor%}
+    </div>
+
+    {% include 'nav_inferior.html' %}
+   
+</body>
+
+</html>
