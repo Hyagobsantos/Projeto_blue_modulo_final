@@ -6,10 +6,10 @@ app = Flask(__name__)
 bp = Blueprint('app', __name__)
 
 
-user ='wsljzdgv'
-password = 'rq4KWQFKb_wvUGBuMJ-pKE9AEVAqGVpM'
-host='tuffi.db.elephantsql.com'
-database='wsljzdgv'
+user =''
+password = ''
+host=''
+database=''
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user}:{password}@{host}/{database}' 
